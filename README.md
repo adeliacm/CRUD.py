@@ -10,15 +10,15 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________
  ***  Execução Menu  ***
  
-  -- Gestão --
+       -- Gestão --
   
-   1 - Listar todos os alunos
-   2 - Listar todos os alunos por ordem alfabetica
-   3 - Remover aluno
-   4 - Atualizar aluno
-   5 - Cadastrar aluno
-   6 - Procurar aluno por nome
-   7 - Sair
+          1 - Listar todos os alunos
+          2 - Listar todos os alunos por ordem alfabetica
+          3 - Remover aluno
+          4 - Atualizar aluno
+          5 - Cadastrar aluno
+          6 - Procurar aluno por nome
+          7 - Sair
    
    Escolha sua opção:
 ________________________________________________________________________________________________________
