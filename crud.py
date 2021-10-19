@@ -60,9 +60,9 @@ class Gestao:
             if(aluno["nome"].find(nome) != -1):
                 alunos_nome.append(aluno)
         for aluno in alunos_nome:
-            print(f"Aluno: { aluno['nome'] } Email: { aluno['email'] }")
-        self.listarTodosOsUsuarios()
-        return "nao_encontrado"
+            print(colorama.Fore.GREEN + f"Aluno: {aluno['nome']} Email: {aluno['email']}")
+        if (len(alunos_nome) == 0):
+            print(colorama.Fore.YELLOW + "Aluno não encontrado")
 
     def removerAlunoEmail(self):
         email = input("Digite o e-mail do aluno para remover (-1 para sair): ")
@@ -78,26 +78,25 @@ class Gestao:
     def atualizarPorEmail(self):
         print(colorama.Fore.RESET)
         email = input("Digite o e-mail do aluno para atualizar o nome (-1 para sair): ")
-        if(email == "-1"):
+        if (email == "-1"):
             return "retirada"
 
         nome = input("Novo nome: ")
 
-        if(len(nome) == 0):
+        if (len(nome) == 0):
             print(colorama.Fore.RED + "Digite um nome valido")
             self.atualizarPorEmail()
             return
 
         for aluno in self.alunos:
-            if(aluno["email"] == email):
+            if (aluno["email"] == email):
                 indice = self.alunos.index(aluno)
                 self.alunos[indice] = {
                     "nome": nome,
                     "email": email
                 }
                 return "sucesso"
-        self.listarTodosOsUsuarios()
-        return "nao_encontrado"
+        print(colorama.Fore.YELLOW + "O aluno não foi encontrado")
 
 if __name__ == "__main__":
     print("\t\t-- Gestão -- \t\t")
@@ -113,8 +112,6 @@ if __name__ == "__main__":
             resultado = gestao.procurarAlunoPorNome()
             if (resultado == "retirada"):
                 print(colorama.Fore.RED + "A ação foi cancelada")
-            elif (resultado == "nao_encontrado"):
-                print(colorama.Fore.YELLOW + "O aluno não foi encontrado")
         elif(opcao == "5"):
             resultado = gestao.cadastrar()
             if(resultado == "retirada"):
@@ -125,8 +122,6 @@ if __name__ == "__main__":
             resultado = gestao.atualizarPorEmail()
             if(resultado == "retirada"):
                 print(colorama.Fore.RED + "A ação foi cancelada")
-            elif(resultado == "nao_encontrado"):
-                print(colorama.Fore.YELLOW + "O aluno não foi encontrado")
             elif(resultado == "sucesso"):
                 print(colorama.Fore.GREEN + "O aluno foi atualizado com sucesso")
         elif(opcao == "3"):
