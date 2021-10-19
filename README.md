@@ -2,13 +2,14 @@
 Sistema básico de CRUD sem interface.
 Desenvolvido em python para fins acadêmicos, focando na compreensão do uso de lista e dicionários.
 
-
-*** Instalação ***
-
-pip3 install -r requirements.txt 
 ________________________________________________________________________________________________________        
+ ***  Instalção  *** 		
+
+       pip3 install -r requirements.txt
+   
+________________________________________________________________________________________________________
  ***  Execução Menu  ***
- 		-- Gestão -- 		
+ -- Gestão -- 		
 
 
         1 - Listar todos os alunos
@@ -19,9 +20,8 @@ ________________________________________________________________________________
         6 - Procurar aluno por nome
         7 - Sair
     
-Escolha sua opção: 
- 
-________________________________________________________________________________________________________
+Escolha sua opção:
+_________________________________________________________________________________________________________
  ***  Execução Cadastrar aluno  ***
  
  Escolha sua opção: 5
