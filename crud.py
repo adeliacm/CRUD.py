@@ -12,13 +12,11 @@ def menu():
     ''')
 
 class Gestao:
-    #construtor da classe
     def __init__(self):
         self.alunos = []
     def cadastrar(self):
         print(colorama.Fore.RESET)
         nome = input("Digite o nome do aluno (-1 para sair): ")
-        #validar se foi preenchido algo
         if(nome == "-1"):
             return "retirada"
         if(len(nome) == 0):
@@ -26,18 +24,15 @@ class Gestao:
             self.cadastrar()
             return
         email = input("Digite o e-mail do aluno: ")
-        # validar se é um e-mail valido
         if(email.find("@") == -1 or email.find(".com") == -1):
             print(colorama.Fore.RED + "Digite um e-mail valido!!")
             self.cadastrar()
             return
-        # validar se o e-mail já foi cadastrado
         for aluno in self.alunos:
             if(aluno["email"] == email):
                 print("O e-mail já existe!")
                 self.cadastrar()
                 return
-        # cadastrar aluno
         self.alunos.append({
             "nome": nome,
             "email": email
